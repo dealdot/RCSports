@@ -1,0 +1,31 @@
+//
+//  RCSports.pch
+//  RCSports
+//
+//  Created by liveidzong on 9/19/16.
+//  Copyright © 2016 SBM. All rights reserved.
+//
+
+#ifndef RCSports_pch
+#define RCSports_pch
+
+// 快速创建颜色
+#define RCColor(r, g, b, a) [UIColor colorWithRed:r green:g blue:b alpha:a]
+// 常用宏
+#define DYRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define DYGlobalBackgroundColor DYRGBColor(235, 235, 235)
+//宽高
+#define RCScreenW [UIScreen mainScreen].bounds.size.width
+#define RCScreenH [UIScreen mainScreen].bounds.size.height
+
+#endif /* RCSports_pch */
+
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define RCLog(FORMAT, ...) fprintf(stderr,"文件 %s: 第%d行\t打印: %s\n",[[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat:FORMAT, ##__VA_ARGS__] UTF8String]);
+#else
+#define RCLog(...)
+#endif
+
+#endif

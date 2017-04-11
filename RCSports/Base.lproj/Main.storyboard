@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="uc8-Z5-Ziv">
+            <objects>
+                <viewController storyboardIdentifier="map" id="rzL-Gn-qWC" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bEr-nk-jn6"/>
+                        <viewControllerLayoutGuide type="bottom" id="cXG-XD-JTi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J8w-y6-48T">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSf-sj-iNg" customClass="BMKMapView">
+                                <rect key="frame" x="4" y="0.0" width="592" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yn-lg-uZG">
+                                <rect key="frame" x="510" y="534" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="4Pd-5E-Cp1"/>
+                                    <constraint firstAttribute="width" constant="46" id="foc-yc-evr"/>
+                                </constraints>
+                                <state key="normal" image="cancel_button" backgroundImage="bg_avatar_default"/>
+                                <state key="highlighted" backgroundImage="abc_ic_clear_disabled"/>
+                                <connections>
+                                    <action selector="dissMapVC:" destination="rzL-Gn-qWC" eventType="touchUpInside" id="7Tx-3C-1ez"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5m-jU-EMH" userLabel="share">
+                                <rect key="frame" x="526" y="34" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="vpg-Mw-GlP"/>
+                                    <constraint firstAttribute="width" constant="40" id="xay-Hd-ij1"/>
+                                </constraints>
+                                <state key="normal" image="ic_share_light" backgroundImage="bg_avatar_default"/>
+                                <connections>
+                                    <action selector="shareMyRunning:" destination="rzL-Gn-qWC" eventType="touchUpInside" id="bNx-Zj-dXE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OSf-sj-iNg" firstAttribute="leading" secondItem="J8w-y6-48T" secondAttribute="leadingMargin" constant="-16" id="8cv-Jo-NbW"/>
+                            <constraint firstAttribute="trailing" secondItem="3Yn-lg-uZG" secondAttribute="trailing" constant="44" id="BIr-Vw-15q"/>
+                            <constraint firstItem="3Yn-lg-uZG" firstAttribute="leading" secondItem="J8w-y6-48T" secondAttribute="leadingMargin" constant="10" id="DUh-Dt-PEG"/>
+                            <constraint firstItem="cXG-XD-JTi" firstAttribute="top" secondItem="OSf-sj-iNg" secondAttribute="bottom" id="HL3-L8-1tR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="F5m-jU-EMH" secondAttribute="trailing" constant="14" id="PgJ-pf-4ta"/>
+                            <constraint firstItem="OSf-sj-iNg" firstAttribute="top" secondItem="J8w-y6-48T" secondAttribute="topMargin" id="QYw-yb-tyb"/>
+                            <constraint firstItem="cXG-XD-JTi" firstAttribute="top" secondItem="3Yn-lg-uZG" secondAttribute="bottom" constant="20" id="R7b-2Y-NiP"/>
+                            <constraint firstAttribute="trailing" secondItem="3Yn-lg-uZG" secondAttribute="trailing" constant="44" id="b4d-rv-vfb"/>
+                            <constraint firstItem="3Yn-lg-uZG" firstAttribute="top" secondItem="bEr-nk-jn6" secondAttribute="bottom" constant="30" id="baO-up-eZ0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OSf-sj-iNg" secondAttribute="trailing" constant="-16" id="cUT-di-DBv"/>
+                            <constraint firstItem="F5m-jU-EMH" firstAttribute="top" secondItem="bEr-nk-jn6" secondAttribute="bottom" constant="14" id="di6-Rd-tc9"/>
+                            <constraint firstItem="OSf-sj-iNg" firstAttribute="top" secondItem="J8w-y6-48T" secondAttribute="topMargin" constant="20" id="qlW-6M-HOJ"/>
+                            <constraint firstItem="OSf-sj-iNg" firstAttribute="top" secondItem="bEr-nk-jn6" secondAttribute="bottom" id="rpf-Ha-Bne"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qlW-6M-HOJ"/>
+                                <exclude reference="rpf-Ha-Bne"/>
+                                <exclude reference="BIr-Vw-15q"/>
+                                <exclude reference="DUh-Dt-PEG"/>
+                                <exclude reference="baO-up-eZ0"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="dissMissBtn" destination="3Yn-lg-uZG" id="yMN-YW-W74"/>
+                        <outlet property="mapView" destination="OSf-sj-iNg" id="Q9V-Ev-VWm"/>
+                        <outlet property="shareButton" destination="F5m-jU-EMH" id="H1v-CW-Q5b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CUz-Qa-Xl4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3330" y="-3973"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="abc_ic_clear_disabled" width="32" height="32"/>
+        <image name="bg_avatar_default" width="32" height="32"/>
+        <image name="cancel_button" width="60" height="60"/>
+        <image name="ic_share_light" width="72" height="72"/>
+    </resources>
+</document>
